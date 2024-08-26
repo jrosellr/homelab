@@ -1,0 +1,14 @@
+#cloud-config
+hostname: "{{hostname}}"
+fqdn: "{{fqdn}}"
+manage_etc_hosts: true
+
+users:
+  - name: debian
+    shell: /bin/bash
+    lock_passwd: false
+    passwd: "{{password}}"
+    ssh_authorized_keys:
+      - "{{ssh_key}}"
+    groups: sudo, users, admin
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
