@@ -1,8 +1,0 @@
-{
-    "yaml.schemas": {
-        "https://raw.githubusercontent.com/canonical/cloud-init/main/cloudinit/config/schemas/versions.schema.cloud-config.json": [
-            "file:///c%3A/dev/homelab/ci-templates/debian--ci-t/vendor-data.yml",
-            "file:///c%3A/dev/homelab/ci-templates/debian--ci-t/user-data.yml"
-        ]
-    }
-}
