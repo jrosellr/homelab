@@ -1,7 +1,7 @@
 [
     {
         "id": 100,
-        "template": "debian-12--ci-t",
+        "template": "debian--ci-t",
         "hostname": "monitoring-00",
         "fqdn": "monitoring-00.local",
         "cpu": {
@@ -14,7 +14,7 @@
     },
     {
         "id": 102,
-        "template": "debian-12--ci-t",
+        "template": "debian--ci-t",
         "hostname": "baleygr",
         "fqdn": "baleygr.local",
         "cpu": {

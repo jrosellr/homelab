@@ -6,8 +6,6 @@ function to_bytes() {
 	echo $(("$1" * 1073741824))
 }
 
-dir=$(dirname "$0")
-
 machine_config=$1
 if [ -z "$machine_config" ]; then
 	echo "Machine configuration required"
@@ -34,12 +32,16 @@ echo "Starting clone from $template_id"
 vm_id=$(echo "$machine_config" | jq --raw-output '.id')
 vm_name=$(echo "$machine_config" | jq --raw-output '.hostname')
 
-"$dir"/"$template_name"/create_mustache_data.sh "$vm_id" "$vm_name"
-"$dir"/"$template_name"/deploy_ci_data.sh "$template_id" "$vm_id"
-
-user_data_file="$template_id"_"$vm_id"_user-data.yml
+snippets_directory="/var/lib/vz/snippets"
 meta_data_file="$template_id"_"$vm_id"_meta-data.yml
-vendor_file="$template_id"_"$vm_id"_vendor.yml
+
+cat >"$snippets_directory"/"$meta_data_file" <<-EOF
+	instance-id: "iid-$vm_id"
+	local-hostname: "$vm_name"
+EOF
+
+user_data_file="$template_id"_user-data.yml
+vendor_file="$template_id"_vendor-data.yml
 
 qm clone "$template_id" "$vm_id"
 
