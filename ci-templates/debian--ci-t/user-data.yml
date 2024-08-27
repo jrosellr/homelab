@@ -1,0 +1,14 @@
+## template: jinja
+#cloud-config
+
+fqdn: "{{ v1.local_hostname }}.local"
+
+users:
+  - name: debian
+    shell: /bin/bash
+    lock_passwd: false
+    passwd: "$6$jWpxiMafSbGt8VIY$7jjDM8bW3wxtJ.IHgTAxHAFxVCasVU7u1TA2W3eh7FmayaPun2DrFYKzpi8/vRnW6iVg/NmaG9qQPTxtpdwcU1"
+    ssh_authorized_keys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCsAU//Tl4ky6cjbZFQUhIpjZR8ob8lKy0uDDw6HBllzHnAGHJnN2GaEt37UvRtbqyce+snTkh439Lo8PCX1gwqKTmnSYoboQQX5Oi0i/EGFusXn2DL8siyxyfe5dlA8uXOxrRhejTAfczJhCg+DwPstvtFm0z1t7bHvqiFV+1bvmRnCNqhpwxv3eTahPQcMtDIQ4zBvzx02rMbqL53kDId+EHztil/DtcECawzjwmiIMQoxMmDjgNy83ccrsnBEidYJ59mkTgJm7Y6iyZEU7zmCVsMue2tXMUD7scM01T4b94Xn7nc4nVFHAWEs2EL3grhHroYsSb5mXwtiv54m4D4J3YkHj0lsoG0lmWypMDMeC68vcKP5/GHbGirTIlyW1SwdGbk3+rM2XwtO+2rbQv55a0Su4XlqO7Tc2/a/dcG62ttQw5rQWViS2HqGzN5hMaYyJrcTuYC4a85OOIrOAmxCBNHXhFTPim5Ueb7TGeum8EPdGzj3PnDr7ZOA4cDMY0AkeGn9rOYshbQQBnUZPc2Bu46HEkk+ePOmtiC8TcCfTIXISvr7BXi4Kp0oJ5y6eNErYYZMz+J20VZEMWCWs+uTprN1+sbSqqx8CFVXJZ5oc9X/pIfdL17pw+Jpr1YbFhJTcyeyuKz4INpvCIKASqy1ueWbr9MO38x+/03HXw2pw== root@homelab-00"
+    groups: sudo, users, admin
+    sudo: "ALL=(ALL) NOPASSWD:ALL"

@@ -1,7 +1,7 @@
 {
     "debian": {
         "id": 9000,
-        "name": "debian-12--ci-t",
+        "name": "debian--ci-t",
         "image": "debian-12-genericcloud-amd64.img"
     }
 }

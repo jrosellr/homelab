@@ -2,6 +2,8 @@
 
 set -e
 
+dir=$(dirname "$0")
+
 vmid=$1
 if [ -z "$vmid" ]; then
 	echo "VM ID required"
@@ -35,3 +37,7 @@ qm create "$vmid" \
 qm set "$vmid" --name "$template_name"
 
 qm template "$vmid"
+
+snippets_directory="/var/lib/vz/snippets"
+cp "$dir"/"$template_name"/user-data.yml "$snippets_directory"/"$vmid"_user-data.yml
+cp "$dir"/"$template_name"/vendor-data.yml "$snippets_directory"/"$vmid"_vendor-data.yml
