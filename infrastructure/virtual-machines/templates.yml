@@ -1,0 +1,10 @@
+templates:
+  - name: "vm-basic"
+    image: "debian-12-genericcloud-amd64.img"
+    cloud-init:
+      datasource: "nocloud"
+      user-data: "user-data.yml"
+      vendor-data: "vendor-data.yml"
+      meta-data:
+        template: "meta-data.mustache.yml"
+        provider: "create_meta_data.sh"

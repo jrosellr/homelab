@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=../schemas/modules.schema.json
-
-modules:
-  - name: "vm-basic"
-    type: "vm"
-    image: "debian-12-genericcloud-amd64.img"

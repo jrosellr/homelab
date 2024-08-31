@@ -1,0 +1,2 @@
+instance-id: "iid-{{vm_id}}"
+local-hostname: "{{vm_name}}"

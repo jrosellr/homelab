@@ -1,0 +1,9 @@
+resources:
+  - name: "monitoring-01"
+    type: "vm"
+    template: "vm-basic"
+    compute:
+      cpu-cores: 2
+      memory: "4G"
+    storage:
+      disk-size: "32G"
